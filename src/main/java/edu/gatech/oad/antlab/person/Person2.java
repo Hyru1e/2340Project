@@ -3,7 +3,7 @@ package edu.gatech.oad.antlab.person;
 /**
  *  A simple class for person 2
  *  returns their name and a
- *  modified string 
+ *  modified string
  *
  * @author Bob
  * @version 1.1
@@ -17,7 +17,7 @@ public class Person2 {
 	 * @param pname the person's real name
 	 */
 	 public Person2(String pname) {
-	   name = pname;
+	   name = "Celine";
 	 }
 	/**
 	 * This method should take the string
@@ -30,15 +30,23 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+		java.util.ArrayList<Character>  myinput = new java.util.ArrayList<>();
+		for (char c: input.toCharArray()) {
+			myinput.add(c);
+		}
+		String myOutput = "";
+		while (myinput.size() != 0) {
+			int randPicker = (int) (Math.random() * myinput.size());
+			myOutput = myOutput + (myinput.remove(randPicker));
+		}
+		return myOutput;
 	}
 	/**
 	 * Return a string rep of this object
 	 * that varies with an input string
 	 *
 	 * @param input the varying string
-	 * @return the string representing the 
+	 * @return the string representing the
 	 *         object
 	 */
 	public String toString(String input) {
